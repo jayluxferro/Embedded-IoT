@@ -11,20 +11,18 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // first part
-  digitalWrite(red, HIGH);
-  digitalWrite(yellow, LOW);
-  digitalWrite(green, LOW);
-  delay(dlay);
+  trigger_light(HIGH, LOW, LOW, 10000);
 
   // second part
-  digitalWrite(red, LOW);
-  digitalWrite(yellow, LOW);
-  digitalWrite(green, HIGH);
-  delay(dlay);
+   trigger_light(HIGH, LOW, HIGH, 5000);
 
   // third part
-  digitalWrite(red, LOW);
-  digitalWrite(yellow, HIGH);
-  digitalWrite(green, LOW);
-  delay(dlay);
+   trigger_light(LOW, HIGH, LOW, 1000);
+}
+
+void trigger_light(int p1, int p2, int p3, int p4){
+  digitalWrite(red, p1);
+  digitalWrite(yellow, p2);
+  digitalWrite(green, p3);
+  delay(p4);
 }
